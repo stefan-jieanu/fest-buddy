@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "2MbJCVPeg0vfrfitvHKNOfwpqyIgAWZUBCWxKUls+FXIvgi9VaoLiDq8oI40PjqCcrYVX0+2im65md3rexaNDw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Stefan\\source\\repos\\FestCompanion\\FestCompanion\\FestCompanion\\FestCompanion.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Stefan\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Stefan\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Users\\Stefan\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
+    "C:\\Users\\Stefan\\.nuget\\packages\\xamarin.forms.googlemaps\\2.1.0\\xamarin.forms.googlemaps.2.1.0.nupkg.sha512",
+    "C:\\Users\\Stefan\\.nuget\\packages\\xamarin.forms.googlemaps.bindings\\2.2.0\\xamarin.forms.googlemaps.bindings.2.2.0.nupkg.sha512",
+    "C:\\Users\\Stefan\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2012\\xamarin.forms.maps.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Xamarin.Forms.GoogleMaps 2.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Xamarin.Forms.GoogleMaps",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}
