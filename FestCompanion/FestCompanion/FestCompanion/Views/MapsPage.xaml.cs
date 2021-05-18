@@ -28,23 +28,37 @@ namespace FestCompanion.Views
 
         private void InitMap()
         {
-            var pin = new Pin()
-            {
-                Position = new Xamarin.Forms.Maps.Position(41.892114, 12.482268),
-                Label = "Some Pin!",
-            };
+            //var pin = new Pin()
+            //{
+            //    Position = new Xamarin.Forms.Maps.Position(45.756935, 21.229367),
+            //    Label = "Some Pin!",
+            //};
 
-            pin.MarkerClicked += (sender, e) =>
-            {
-                OnPinSelected((Pin)sender);
-            };
+            //pin.MarkerClicked += (sender, e) =>
+            //{
+            //    OnPinSelected((Pin)sender);
+            //};
 
             // Center the map on Festival Location
-            Position centerPosition = new Position(45.756935, 21.229367);
+            Position centerPosition = new Position(45.778457, 21.265486);
             MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(centerPosition, Distance.FromKilometers(2)));
+            
+            // Set the pins according to stage locations
+            foreach (Stage stage in TempUserStorage.stages)
+            {
+                var pin = new Pin()
+                {
+                    Position = new Position(Convert.ToDouble(stage.Lat), Convert.ToDouble(stage.Lng)),
+                    Label = stage.Text
+                };
 
+                pin.MarkerClicked += (sender, e) =>
+                {
+                    OnPinSelected((Pin)sender);
+                };
 
-            MyMap.Pins.Add(pin);
+                MyMap.Pins.Add(pin);
+            }
         }
 
         async void OnPinSelected(Pin pin)

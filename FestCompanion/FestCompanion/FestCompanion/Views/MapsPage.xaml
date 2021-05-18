@@ -14,7 +14,7 @@
                HorizontalOptions="FillAndExpand"
                VerticalOptions="FillAndExpand"/>-->
 
-    <mymap:Map x:Name="MyMap" MapType="Street" HasZoomEnabled="True">
+    <mymap:Map x:Name="MyMap" MapType="Street">
         <mymap:Map.ItemTemplate>
             <DataTemplate>
                 <mymap:Pin Position="{Binding Position}"
