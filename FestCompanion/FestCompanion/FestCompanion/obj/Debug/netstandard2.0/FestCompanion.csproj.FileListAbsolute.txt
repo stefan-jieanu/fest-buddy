@@ -18,3 +18,4 @@ C:\Users\Stefan\source\repos\FestCompanion\FestCompanion\FestCompanion\obj\Debug
 C:\Users\Stefan\source\repos\FestCompanion\FestCompanion\FestCompanion\obj\Debug\netstandard2.0\ref\FestCompanion.dll
 C:\Users\Stefan\source\repos\FestCompanion\FestCompanion\FestCompanion\obj\Debug\netstandard2.0\FestCompanion.pdb
 C:\Users\Stefan\source\repos\FestCompanion\FestCompanion\FestCompanion\obj\Debug\netstandard2.0\Views\MapsPage.xaml.g.cs
+C:\Users\Stefan\source\repos\FestCompanion\FestCompanion\FestCompanion\obj\Debug\netstandard2.0\Views\StageDetailPage.xaml.g.cs

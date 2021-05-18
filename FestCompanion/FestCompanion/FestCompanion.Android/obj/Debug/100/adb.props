@@ -1,2 +1,2 @@
-AdbTarget=-s WCR7N19507000493
+AdbTarget=-s emulator-5554
 AdbOptions=

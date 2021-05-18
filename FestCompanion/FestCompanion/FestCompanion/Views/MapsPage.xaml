@@ -10,8 +10,17 @@
         <vm:MapViewModel />
     </ContentPage.BindingContext>
 
-    <mymap:Map x:Name="mygooglemap"
+    <!--<mymap:Map x:Name="mygooglemap"
                HorizontalOptions="FillAndExpand"
-               VerticalOptions="FillAndExpand"/>
+               VerticalOptions="FillAndExpand"/>-->
 
+    <mymap:Map x:Name="MyMap" MapType="Street" HasZoomEnabled="True">
+        <mymap:Map.ItemTemplate>
+            <DataTemplate>
+                <mymap:Pin Position="{Binding Position}"
+                           Label="{Binding Label}" />
+            </DataTemplate>
+        </mymap:Map.ItemTemplate>
+    </mymap:Map>
+    
 </ContentPage>
