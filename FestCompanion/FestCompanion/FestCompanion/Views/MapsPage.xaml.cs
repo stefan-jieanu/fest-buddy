@@ -44,7 +44,7 @@ namespace FestCompanion.Views
             MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(centerPosition, Distance.FromKilometers(2)));
             
             // Set the pins according to stage locations
-            foreach (Stage stage in TempUserStorage.stages)
+            foreach (Stage stage in FestData.stages)
             {
                 var pin = new Pin()
                 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FestCompanion.Models
 {
@@ -8,4 +9,5 @@ namespace FestCompanion.Models
         public string Text { get; set; }
         public string Description { get; set; }
     }
+
 }

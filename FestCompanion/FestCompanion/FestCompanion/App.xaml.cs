@@ -3,6 +3,7 @@ using FestCompanion.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FestCompanion.Models;
 
 namespace FestCompanion
 {
@@ -69,9 +70,9 @@ namespace FestCompanion
                 Lng = "21.266698"
             };
 
-            TempUserStorage.stages.Add(stage1);
-            TempUserStorage.stages.Add(stage2);
-            TempUserStorage.stages.Add(stage3);
+            FestData.stages.Add(stage1);
+            FestData.stages.Add(stage2);
+            FestData.stages.Add(stage3);
         }
     }
 }
