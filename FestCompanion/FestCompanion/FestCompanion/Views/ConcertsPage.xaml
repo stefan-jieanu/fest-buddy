@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FestCompanion.Views.ConcertsPage"
+             Title="{Binding Title}"
+             xmlns:model="clr-namespace:FestCompanion.Models" 
+             xmlns:local="clr-namespace:FestCompanion.ViewModels"  
+             x:Name="BrowseConcertsPage">
+
+    <RefreshView x:DataType="local:ConcertsViewModel">
+        <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Concerts}"
+                SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10" x:DataType="model:Concert">
+                        <Label Text="{Binding Artist}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                        <Label Text="{Binding Description}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+
+</ContentPage>
