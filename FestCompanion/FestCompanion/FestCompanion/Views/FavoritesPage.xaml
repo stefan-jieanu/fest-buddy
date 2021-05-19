@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:FestCompanion.ViewModels"  
+             xmlns:model="clr-namespace:FestCompanion.Models" 
+             x:Class="FestCompanion.Views.FavoritesPage">
+
+    <RefreshView x:DataType="local:FavoritesViewModel" >
+        <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Concerts}"
+                SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10" x:DataType="model:Concert">
+                        <Label Text="{Binding Artist}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                        <Label Text="{Binding Description}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                        <Button Text="{Binding Artist}"
+                                TextColor="#2196F3"
+                                HeightRequest="25"
+                                WidthRequest="25"
+                                FontSize="0.1"
+                                Grid.Column="1"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="Center"
+                                Clicked="RemoveFromFav"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+
+</ContentPage>

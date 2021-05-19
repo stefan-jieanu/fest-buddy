@@ -32,7 +32,7 @@
     <TabBar>
         <ShellContent Title="Map" Icon="icon_feed.png" Route="MapPage" ContentTemplate="{DataTemplate local:MapsPage}" />
         <ShellContent Title="Artists" Icon="icon_feed.png" Route="BrowsePage" ContentTemplate="{DataTemplate local:ConcertsPage}" />
-        <ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="Favorites" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:FavoritesPage}" />
     </TabBar>
 
     <!--

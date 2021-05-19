@@ -7,6 +7,7 @@ namespace FestCompanion.Models
     public static class FestData
     {
         public static List<Stage> stages = new List<Stage>();
+        public static List<Concert> favorites = new List<Concert>();
     }
 
     public class Concert

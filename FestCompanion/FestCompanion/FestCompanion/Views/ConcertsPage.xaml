@@ -14,14 +14,37 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10" x:DataType="model:Concert">
-                        <Label Text="{Binding Artist}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Artist}" 
+                                Grid.Column="0"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16">
+                                
+                            </Label>
+                            <Button Text="{Binding Artist}"
+                                TextColor="#2196F3"
+                                HeightRequest="25"
+                                WidthRequest="25"
+                                FontSize="0.1"
+                                Grid.Column="1"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="Center"
+                                Clicked="AddToFav"/>
+                            
+                        </Grid>
+
+                        
                         <Label Text="{Binding Description}" 
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" />
+                        
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
