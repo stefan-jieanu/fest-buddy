@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FestCompanion.Views.StageDetailPage"
-             xmlns:model="clr-namespace:FestCompanion.Models"  
+             xmlns:model="clr-namespace:FestCompanion.Models" 
+             BackgroundColor="#212121"
              Title="{Binding Title}">
 
     <!--<StackLayout Spacing="20" Padding="15">
@@ -14,7 +15,7 @@
     
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="Accent">#f50057f</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -23,39 +24,67 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+        <!--<StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="{Binding Photo}" VerticalOptions="Center" HeightRequest="64" />
+                    <Image Source="{Binding Photo}" Aspect="Fill" HeightRequest="100" />
                 </ContentView>
             </StackLayout>
-        </StackLayout>
+        </StackLayout>-->
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="{Binding Text}" FontSize="Title"/>
-                <Label Text="{Binding Description}" FontSize="16" Padding="0,0,0,0"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="-30,-25,0,0" VerticalOptions="FillAndExpand" >
+                        <Image Source="{Binding Photo}" Aspect="Fill" HeightRequest="270" />
+                    </ContentView>
+                </StackLayout>
+                <Label TextColor="White" Text="{Binding Text}" FontSize="Title"/>
+                <Label TextColor="White" Text="{Binding Description}" FontSize="16" Padding="0,0,0,0"/>
 
                 <CollectionView x:Name="ConcertsListView"
                 ItemsSource="{Binding Concerts}"
                 SelectionMode="None">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="10" x:DataType="model:Concert">
-                                <Label Text="{Binding Artist}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
-                                <Label Text="{Binding Description}" 
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
-                                <!--<StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer 
-                                NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
-                                CommandParameter="{Binding .}">
-                                    </TapGestureRecognizer>
-                                </StackLayout.GestureRecognizers>-->
+                            <StackLayout x:DataType="model:Concert">
+
+                                <Frame IsClippedToBounds="True"
+                                    HasShadow="True"
+                                    Padding="0"
+                                    BackgroundColor="#f44336" >
+                                    <Frame.Margin>
+                                        <OnPlatform x:TypeArguments="Thickness"
+                                    Android="10"/>
+                                    </Frame.Margin>
+
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                                        <Image  Source="{Binding Photo}" Aspect="Fill" HeightRequest="200" />
+                                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="15">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label TextColor="White" FontSize = "25" Text="{Binding Artist}" Grid.Column="0"/>
+                                                <Button Text="{Binding Artist}"
+                                                    TextColor="#f50057"
+                                                    BackgroundColor="White"
+                                                    HeightRequest="25"
+                                                    WidthRequest="25"
+                                                    FontSize="0.1"
+                                                    Grid.Column="1"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="End"
+                                                    Clicked="AddToFav"/>
+                                            </Grid>
+
+                                            <Label TextColor="White" Text="{Binding Description}" FontSize = "16"/>
+                                            <Label TextColor="White" Text="{Binding When}" FontSize = "14"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Frame>
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

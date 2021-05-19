@@ -33,6 +33,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.SlidingPaneLayout.dll",
 		"Xamarin.Android.Support.SwipeRefreshLayout.dll",
 		"Xamarin.Android.Support.v7.AppCompat.dll",
+		"Xamarin.Android.Support.v7.CardView.dll",
 		"Xamarin.Android.Support.Vector.Drawable.dll",
 		"Xamarin.Android.Support.VersionedParcelable.dll",
 		"Xamarin.Android.Support.ViewPager.dll",

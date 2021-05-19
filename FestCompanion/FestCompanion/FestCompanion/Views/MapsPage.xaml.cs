@@ -41,7 +41,7 @@ namespace FestCompanion.Views
 
             // Center the map on Festival Location
             Position centerPosition = new Position(45.778457, 21.265486);
-            MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(centerPosition, Distance.FromKilometers(2)));
+            MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(centerPosition, Distance.FromKilometers(0.4)));
             
             // Set the pins according to stage locations
             foreach (Stage stage in FestData.stages)

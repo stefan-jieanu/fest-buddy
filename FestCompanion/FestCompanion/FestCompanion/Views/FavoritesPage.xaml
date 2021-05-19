@@ -4,6 +4,7 @@
              Title="{Binding Title}"
              xmlns:local="clr-namespace:FestCompanion.ViewModels"  
              xmlns:model="clr-namespace:FestCompanion.Models" 
+             BackgroundColor="#212121"
              x:Class="FestCompanion.Views.FavoritesPage">
 
     <RefreshView x:DataType="local:FavoritesViewModel" >
@@ -12,7 +13,7 @@
                 SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Concert">
+                    <!--<StackLayout Padding="10" x:DataType="model:Concert">
                         <Label Text="{Binding Artist}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
@@ -30,6 +31,47 @@
                                 VerticalOptions="CenterAndExpand"
                                 HorizontalOptions="Center"
                                 Clicked="RemoveFromFav"/>
+                    </StackLayout>-->
+
+                    <StackLayout Padding="10" Margin="5" x:DataType="model:Concert">
+
+                        <Frame IsClippedToBounds="True"
+                            HasShadow="True"
+                            Padding="0"
+                            BackgroundColor="#f44336" >
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness"
+                                    Android="10"/>
+                            </Frame.Margin>
+
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                                <Image  Source="{Binding Photo}" Aspect="Fill" HeightRequest="200" />
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="15">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label TextColor="White" FontSize = "25" Text="{Binding Artist}" Grid.Column="0"/>
+                                        <Button Text="{Binding Artist}"
+                                            TextColor="#f50057"
+                                            BackgroundColor="White"
+                                            HeightRequest="25"
+                                            WidthRequest="25"
+                                            FontSize="0.1"
+                                            Grid.Column="1"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="End"
+                                            Clicked="RemoveFromFav"/>
+                                    </Grid>
+
+                                    <Label TextColor="White" Text="{Binding Description}" FontSize = "16"/>
+                                    <Label TextColor="White" Text="{Binding When}" FontSize = "14"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </Frame>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

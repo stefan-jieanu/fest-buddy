@@ -36,9 +36,15 @@ namespace FestCompanion
 
         private void LoadData()
         {
-            Concert concert1 = new Concert() { Artist = "Pink Floyd", Description = "Cool band", When = "17, Thursday 20:00-22:00" };
-            Concert concert2 = new Concert() { Artist = "Led Zeppelin", Description = "Das zepppeling", When = "22, Monday 20:00-22:00" };
-            Concert concert3 = new Concert() { Artist = "The boyz", Description = "Cam gey csf", When = "18, Sunday 20:00-22:00" };
+            Concert concert1 = new Concert() { Artist = "Pink Floyd", Description = "Cool band", When = "17, Thursday 20:00-22:00",
+                Photo = "https://business-review.eu/wp-content/uploads/2019/11/untold-fest.jpg",
+            };
+            Concert concert2 = new Concert() { Artist = "Led Zeppelin", Description = "Das zepppeling", When = "22, Monday 20:00-22:00",
+                Photo = "https://business-review.eu/wp-content/uploads/2019/11/untold-fest.jpg",
+            };
+            Concert concert3 = new Concert() { Artist = "The boyz", Description = "Cam gey csf", When = "18, Sunday 20:00-22:00",
+                Photo = "https://business-review.eu/wp-content/uploads/2019/11/untold-fest.jpg",
+            };
 
             Stage stage1 = new Stage()
             {

@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xamarin;
+using Android.Graphics;
 
 namespace FestCompanion.Droid
 {
@@ -25,6 +26,11 @@ namespace FestCompanion.Droid
 
             // Init forms maps
             Xamarin.FormsGoogleMaps.Init(this, savedInstanceState);
+
+            // Update the color of the status bar
+            var color = Color.ParseColor("#aa2e25");
+            Window.SetStatusBarColor(color);
+
 
             LoadApplication(new App());
         }
